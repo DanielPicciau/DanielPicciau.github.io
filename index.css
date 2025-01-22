@@ -12,7 +12,7 @@
 
 /* Light Mode Variables */
 .light-mode {
-    --bg-color: #ffffff;
+    --bg-color: #ececec;
     --text-color: #000000;
     --header-bg: #f8f9fa;
     --footer-bg: #f8f9fa;
@@ -95,7 +95,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
@@ -109,7 +109,7 @@ footer {
     background-color: var(--footer-bg);
     border-radius: 12px;
     z-index: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
@@ -130,7 +130,7 @@ footer {
     padding: 20px;
     border-radius: 8px;
     color: var(--text-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -151,10 +151,10 @@ footer {
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease;
 }
 
 #home .content .image img:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
