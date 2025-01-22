@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Picciau - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/temp-logo.png" />
+</head>
+
+<body>
+
+<header class="bg-dark text-light py-3">
+    <h1>Daniel Picciau - Digital Portfolio</h1>
+</header>
+
+<!-- Include Navbar -->
+<div id="navbar-placeholder" style="text-align: center;"></div>
+
+<div class="container my-5" id="home">
+    <div class="background-overlay"></div>
+    <div class="content">
+        <div class="text">
+            <h2>Welcome!</h2>
+            <p>I'm Daniel Picciau, an 18-year-old T-Level student in Digital Production Design & Development based in Worksop, UK. I am passionate about Python development, web development, and UI Design.<br><br>This portfolio showcases my learning journey and current projects, aiming to demonstrate my skills and growth in the field.</p>
+        </div>
+        <div class="image">
+            <img src="images/daniel-pfp.png" alt="Daniel Picciau">
+        </div>
+    </div>
+</div>
+
+<div class="container my-5" id="projects">
+    <h2>My Projects</h2>
+    <p>Here are some of the projects I am working on:</p>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h3>Project 1: Agar.io clone</h3>
+            <p>Using JavaScript, HTML, & CSS, I created a small, local clone of Agar.io featuring a score system, enemy system, and names.</p>
+        </li>
+    </ul>
+</div>
+
+<div class="container my-5" id="tutors">
+    <h2>Learning Journey by Tutors</h2>
+    <p>This section highlights what I have learned from each tutor, with examples of work and key concepts covered.</p>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="richard_page.html" style="text-decoration: none; color: inherit;">
+                <h3>Tutor 1: Richard Gent</h3>
+                <p>Web development (HTML, CSS, JS), database creation, and understanding different software & hardware.</p>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="paul_page.html" style="text-decoration: none; color: inherit;">
+                <h3>Tutor 2: Paul Smith</h3>
+                <p>Python development, including the use of PANDAS & other contemporary libraries.</p>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="safida_page.html" style="text-decoration: none; color: inherit;">
+                <h3>Tutor 3: Safida Ali</h3>
+                <p>Current laws & legislation for businesses, guides & codes of conduct.</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2025 Daniel Picciau. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Load the navbar dynamically
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Light mode toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
+                const isLightMode = document.body.classList.contains('light-mode');
+                themeToggle.textContent = isLightMode ? 'Dark Mode' : 'Light Mode';
+            });
+        });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
