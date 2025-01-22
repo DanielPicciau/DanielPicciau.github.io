@@ -1,6 +1,7 @@
 /* Base Navbar Styles */
+/* Base Navbar Styles */
 nav {
-    background: var(--header-bg);
+    background: #090909; /* Changed the background color */
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -11,6 +12,7 @@ nav {
     z-index: 10;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 /* Navbar Links */
 nav a {
