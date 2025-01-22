@@ -2,9 +2,9 @@
 :root {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --header-bg: #1e1e2f;
-    --footer-bg: #1e1e2f;
-    --list-item-bg: #2a2a2a;
+    --header-bg: #090909;
+    --footer-bg: #090909;
+    --list-item-bg: #121212;
     --list-item-hover-bg: #ffffff;
     --list-item-hover-color: #000000;
     --accent-color: #bb86fc;
@@ -12,7 +12,7 @@
 
 /* Light Mode Variables */
 .light-mode {
-    --bg-color: #ececec;
+    --bg-color: #bebebe;
     --text-color: #000000;
     --header-bg: #f8f9fa;
     --footer-bg: #f8f9fa;
