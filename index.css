@@ -2,7 +2,7 @@
 :root {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --header-bg: #090909;
+    --header-bg: #2a2a2a;
     --footer-bg: #090909;
     --list-item-bg: #121212;
     --list-item-hover-bg: #ffffff;
@@ -53,13 +53,14 @@ header h1 {
     padding: 20px;
     background: var(--header-bg);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px 8px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .container h2 {
     color: var(--accent-color);
     transition: color 0.3s ease;
+    text-align: left;
 }
 
 /* Footer Styles */
@@ -92,56 +93,52 @@ footer {
     border-radius: 12px;
     padding: 20px;
     display: flex;
+    flex-direction: column; /* Stack heading and content vertically */
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Space between heading and content */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Overlay Background */
-#home .background-overlay {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background-color: var(--footer-bg);
-    border-radius: 12px;
-    z-index: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease;
+/* Accent Color for Headings */
+.text-accent {
+    color: var(--accent-color);
+}
+
+/* Welcome Heading */
+#home .welcome-heading {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 10px; /* Space between heading and content */
+    font-size: 2rem; /* Adjust size if necessary */
 }
 
 /* Content Wrapper */
 #home .content {
-    position: relative;
-    z-index: 1;
     display: flex;
+    flex-direction: row; /* Align grey box and image horizontally */
     align-items: center;
-    gap: 20px;
-    width: 100%;
+    gap: 20px; /* Space between the grey box and the image */
+    width: 100%; /* Ensure full-width alignment */
+    justify-content: center; /* Center content horizontally */
 }
 
 /* Text Section with Background */
 #home .content .text {
-    flex: 1;
+    flex: 1; /* Allow the grey box to take available space */
     background-color: var(--list-item-bg);
     padding: 20px;
     border-radius: 8px;
     color: var(--text-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: left; /* Align text to the left */
+    max-width: 60%; /* Constrain the width */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Text Styling */
-#home .content .text h2 {
-    color: var(--accent-color);
-    transition: color 0.3s ease;
-}
-
-/* Image Styling */
+/* Image Section */
 #home .content .image {
-    flex: 1;
+    flex: 1; /* Allow the image to take available space */
     text-align: center;
 }
 
