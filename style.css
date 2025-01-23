@@ -60,11 +60,15 @@ header h1 {
     background-color: var(--list-item-bg);
     color: var(--text-color);
     border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1); /* Initial scale */
 }
 
 .list-group-item:hover {
     background-color: var(--list-item-hover-bg);
     color: var(--list-item-hover-color);
+    transform: scale(1.0025); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
 }
 
 .about-image {
