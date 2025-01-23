@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Picciau - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/temp-logo.png" />
+</head>
+
+<body>
+
+    <header class="bg-dark text-light py-3" style="padding-left: 20px;">
+        <h1 style="font-size: 1.8rem; margin: 0;">Daniel Picciau - Portfolio</h1>
+    </header>
+    
+    <!-- Include Navbar -->
+    <div id="navbar-placeholder" style="text-align: center;"></div>
+
+    <div class="container my-5">
+        <h2 class="text-accent">My Portfolio</h2>
+        <p>Explore my skills and projects by category:</p>
+
+        <!-- Portfolio Buttons -->
+        <div class="d-flex justify-content-around my-4">
+            <!-- Python Button -->
+            <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#pythonSection" aria-expanded="false" aria-controls="pythonSection">
+                Python
+            </button>
+            
+            <!-- Web Development Button -->
+            <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#webSection" aria-expanded="false" aria-controls="webSection">
+                HTML, JS, CSS
+            </button>
+            
+            <!-- SQL & Databases Button -->
+            <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#sqlSection" aria-expanded="false" aria-controls="sqlSection">
+                SQL & Databases
+            </button>
+        </div>
+
+        <!-- Collapsible Sections -->
+        <div class="mt-5">
+            <!-- Python Section -->
+            <div class="collapse" id="pythonSection">
+                <div class="card card-body bg-dark text-light">
+                    <h3>Python Projects</h3>
+                    <p>Explore my Python programming projects:</p>
+                    <ul>
+                        <li><strong>Project 1:</strong> Data Visualizer - A Python-based tool for analyzing datasets using Pandas and Matplotlib.</li>
+                        <li><strong>Project 2:</strong> Automation Script - Automated repetitive tasks using Python and Selenium.</li>
+                        <li><strong>Project 3:</strong> Flask Web App - A simple Flask application demonstrating dynamic routing and templates.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Web Development Section -->
+            <div class="collapse" id="webSection">
+                <div class="card card-body bg-dark text-light">
+                    <h3>Web Development Projects</h3>
+                    <p>My work with HTML, CSS, and JavaScript:</p>
+                    <ul>
+                        <li><strong>Project 1:</strong> Portfolio Website - This portfolio, created using HTML, CSS, and Bootstrap.</li>
+                        <li><strong>Project 2:</strong> Interactive Web Game - A dynamic JavaScript-based game with scoring and animations.</li>
+                        <li><strong>Project 3:</strong> Responsive Landing Page - A fully responsive website design using modern CSS techniques.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SQL & Databases Section -->
+            <div class="collapse" id="sqlSection">
+                <div class="card card-body bg-dark text-light">
+                    <h3>SQL & Database Projects</h3>
+                    <p>My experience with SQL and database management:</p>
+                    <ul>
+                        <li><strong>Project 1:</strong> Employee Database - Designed and implemented a relational database for managing employee records.</li>
+                        <li><strong>Project 2:</strong> Data Analysis - Queried large datasets using SQL for insights and reporting.</li>
+                        <li><strong>Project 3:</strong> E-commerce Backend - Developed a database schema for an e-commerce application.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2025 Daniel Picciau. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Load the navbar dynamically
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // Light mode toggle functionality
+                const themeToggle = document.getElementById('theme-toggle');
+                themeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('light-mode');
+                    const isLightMode = document.body.classList.contains('light-mode');
+                    themeToggle.textContent = isLightMode ? 'Dark Mode' : 'Light Mode';
+                });
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
