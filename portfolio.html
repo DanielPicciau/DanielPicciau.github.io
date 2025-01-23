@@ -95,13 +95,24 @@
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
 
-                // Light mode toggle functionality
+                // Check for saved theme preference in localStorage
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light') {
+                    document.body.classList.add('light-mode');
+                }
+
                 const themeToggle = document.getElementById('theme-toggle');
                 themeToggle.addEventListener('click', () => {
                     document.body.classList.toggle('light-mode');
                     const isLightMode = document.body.classList.contains('light-mode');
                     themeToggle.textContent = isLightMode ? 'Dark Mode' : 'Light Mode';
+
+                    // Save the preference to localStorage
+                    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
                 });
+
+                // Update button text based on initial theme
+                themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Dark Mode' : 'Light Mode';
             });
     </script>
 
