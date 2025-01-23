@@ -20,8 +20,6 @@
     --accent-color: #6200ea;
 }
 
-
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -32,66 +30,41 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.main-content-wrapper {
-    background: linear-gradient(135deg, #494949, #000000, #121212);
-    background-size: 300% 300%;
-    animation: gradientMove 10s ease infinite;
-}
-
 header {
     background: var(--header-bg);
     color: var(--accent-color);
     text-align: left;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 10px 20px;
-    position: relative;
-    z-index: 2; /* Ensure it sits above the background */
+    padding-top: 5px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-.navbar-placeholder {
-    background: var(--header-bg); /* Match header background */
-    z-index: 1; /* Below the header */
-    height: 50px; /* Adds a buffer under navbar */
+    margin: 20px;
 }
 
 .container {
     max-width: 1100px;
     margin: 20px auto;
     padding: 20px;
-    background: var(--header-bg); /* Background of content boxes */
+    background: var(--header-bg);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container h2 {
     color: var(--accent-color);
     text-align: left;
-    transition: color 0.3s ease;
 }
 
 .list-group-item {
     background-color: var(--list-item-bg);
     color: var(--text-color);
     border: none;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .list-group-item:hover {
     background-color: var(--list-item-hover-bg);
     color: var(--list-item-hover-color);
-    transform: translateY(-3px); /* Adds a subtle lift effect */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds a hover shadow */
 }
 
 .about-image {
@@ -100,12 +73,6 @@ header h1 {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.about-image:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    transform: scale(1.05); /* Slightly enlarges the image on hover */
 }
 
 /* Disable hover effect for the specific list-group-item */
@@ -114,7 +81,4 @@ header h1 {
     color: var(--text-color) !important; /* Use the variable for the text color */
     cursor: default !important; /* Prevents the cursor from changing to a pointer */
     box-shadow: none !important; /* Removes any hover shadow effect */
-    transform: none !important; /* Ensures no hover animation is applied */
 }
-
-
