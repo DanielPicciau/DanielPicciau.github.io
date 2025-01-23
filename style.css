@@ -47,6 +47,16 @@ header h1 {
     margin: 20px;
 }
 
+/* Welcome Heading */
+.welcome-heading {
+    text-align: left !important; /* Force left alignment */
+    padding-left: 20px; /* Adds padding on the left */
+    color: var(--accent-color); /* Ensures consistent color */
+    margin-bottom: 10px; /* Adds space below the heading */
+    font-size: 2rem; /* Adjust size if necessary */
+}
+
+
 /* Container Styles */
 .container {
     max-width: 1100px;
@@ -108,11 +118,10 @@ footer {
 }
 
 /* Welcome Heading */
+
 #home .welcome-heading {
-    text-align: center;
-    color: var(--accent-color);
-    margin-bottom: 10px; /* Space between heading and content */
-    font-size: 2rem; /* Adjust size if necessary */
+    text-align: left; /* Align to left, override center alignment */
+    padding-left: 20px; /* Add padding to the left */
 }
 
 /* Content Wrapper */
@@ -157,3 +166,12 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
+
+/* Override any conflicting styles for #home h2 */
+#home h2.welcome-heading {
+    text-align: left !important; /* Force left alignment */
+    padding-left: 20px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
