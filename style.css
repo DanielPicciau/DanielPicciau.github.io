@@ -1,7 +1,7 @@
 :root {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --header-bg: #2a2a2a;
+    --header-bg: #42424246;
     --footer-bg: #090909;
     --list-item-bg: #121212;
     --list-item-hover-bg: #ffffff;
@@ -35,6 +35,7 @@ body {
     background-image: var(--bg-image);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+    
 }
 
 header {
@@ -44,6 +45,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     padding-top: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
 }
 
 header h1 {
@@ -58,7 +60,7 @@ header h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
+
 }
 
 .container h2 {
@@ -73,6 +75,7 @@ header h1 {
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     transform: scale(1);
+
 }
 
 .list-group-item:hover {
