@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Pandas and Charts&colon; My9 Comprehensive Guide</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="pandas-and-charts-my9-comprehensive-guide">Pandas and Charts: My9 Comprehensive Guide</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li>Introduction to Pandas</li>
+<li>Creating and Loading DataFrames</li>
+<li>DataFrame Operations</li>
+<li>Visualization with Charts
+<ul>
+<li>Pie Charts</li>
+<li>Line Charts</li>
+</ul>
+</li>
+<li>Advanced Operations</li>
+<li>Hands-On Example in Google Colab</li>
+</ol>
+<hr>
+<h2 id="1-introduction-to-pandas">1. Introduction to Pandas</h2>
+<p>Pandas is a powerful Python library for data manipulation and analysis. It provides data structures like Series (1-dimensional) and DataFrame (2-dimensional) for handling and analyzing structured data easily.</p>
+<hr>
+<h2 id="2-creating-and-loading-dataframes">2. Creating and Loading DataFrames</h2>
+<h3 id="a-creating-dataframes-from-scratch">a. Creating DataFrames from Scratch</h3>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+<span class="hljs-comment"># Creating a DataFrame from a dictionary</span>
+data = {
+    <span class="hljs-string">&#x27;Name&#x27;</span>: [<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-string">&#x27;Charlie&#x27;</span>],
+    <span class="hljs-string">&#x27;Age&#x27;</span>: [<span class="hljs-number">25</span>, <span class="hljs-number">30</span>, <span class="hljs-number">35</span>],
+    <span class="hljs-string">&#x27;Salary&#x27;</span>: [<span class="hljs-number">50000</span>, <span class="hljs-number">60000</span>, <span class="hljs-number">70000</span>]
+}
+df = pd.DataFrame(data)
+<span class="hljs-built_in">print</span>(df)
+</code></pre>
+<h3 id="b-loading-dataframes-from-files">b. Loading DataFrames from Files</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Loading a DataFrame from a CSV file</span>
+df = pd.read_csv(<span class="hljs-string">&#x27;data.csv&#x27;</span>)
+
+<span class="hljs-comment"># Loading a DataFrame from an Excel file</span>
+df = pd.read_excel(<span class="hljs-string">&#x27;data.xlsx&#x27;</span>)
+
+<span class="hljs-comment"># Previewing the first few rows</span>
+<span class="hljs-built_in">print</span>(df.head())
+</code></pre>
+<hr>
+<h2 id="3-dataframe-operations">3. DataFrame Operations</h2>
+<h3 id="a-basic-operations">a. Basic Operations</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Viewing the structure of the DataFrame</span>
+<span class="hljs-built_in">print</span>(df.info())
+
+<span class="hljs-comment"># Descriptive statistics</span>
+<span class="hljs-built_in">print</span>(df.describe())
+
+<span class="hljs-comment"># Selecting specific columns</span>
+ages = df[<span class="hljs-string">&#x27;Age&#x27;</span>]
+<span class="hljs-built_in">print</span>(ages)
+
+<span class="hljs-comment"># Filtering rows</span>
+over_30 = df[df[<span class="hljs-string">&#x27;Age&#x27;</span>] &gt; <span class="hljs-number">30</span>]
+<span class="hljs-built_in">print</span>(over_30)
+
+<span class="hljs-comment"># Adding a new column</span>
+df[<span class="hljs-string">&#x27;Tax&#x27;</span>] = df[<span class="hljs-string">&#x27;Salary&#x27;</span>] * <span class="hljs-number">0.2</span>
+<span class="hljs-built_in">print</span>(df)
+</code></pre>
+<h3 id="b-grouping-and-aggregation">b. Grouping and Aggregation</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Grouping by a column and calculating the mean</span>
+grouped = df.groupby(<span class="hljs-string">&#x27;Age&#x27;</span>).mean()
+<span class="hljs-built_in">print</span>(grouped)
+
+<span class="hljs-comment"># Aggregating multiple functions</span>
+grouped = df.groupby(<span class="hljs-string">&#x27;Age&#x27;</span>).agg({<span class="hljs-string">&#x27;Salary&#x27;</span>: [<span class="hljs-string">&#x27;mean&#x27;</span>, <span class="hljs-string">&#x27;sum&#x27;</span>], <span class="hljs-string">&#x27;Tax&#x27;</span>: <span class="hljs-string">&#x27;sum&#x27;</span>})
+<span class="hljs-built_in">print</span>(grouped)
+</code></pre>
+<h3 id="c-handling-missing-data">c. Handling Missing Data</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Checking for missing values</span>
+<span class="hljs-built_in">print</span>(df.isnull().<span class="hljs-built_in">sum</span>())
+
+<span class="hljs-comment"># Filling missing values</span>
+df[<span class="hljs-string">&#x27;Age&#x27;</span>] = df[<span class="hljs-string">&#x27;Age&#x27;</span>].fillna(df[<span class="hljs-string">&#x27;Age&#x27;</span>].mean())
+
+<span class="hljs-comment"># Dropping rows with missing values</span>
+df = df.dropna()
+<span class="hljs-built_in">print</span>(df)
+</code></pre>
+<hr>
+<h2 id="4-visualization-with-charts">4. Visualization with Charts</h2>
+<h3 id="a-pie-charts">a. Pie Charts</h3>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-comment"># Data for the chart</span>
+chart_data = df[<span class="hljs-string">&#x27;Salary&#x27;</span>]
+labels = df[<span class="hljs-string">&#x27;Name&#x27;</span>]
+
+<span class="hljs-comment"># Creating a pie chart</span>
+plt.figure(figsize=(<span class="hljs-number">6</span>, <span class="hljs-number">6</span>))
+plt.pie(chart_data, labels=labels, autopct=<span class="hljs-string">&#x27;%1.1f%%&#x27;</span>)
+plt.title(<span class="hljs-string">&#x27;Salary Distribution&#x27;</span>)
+plt.show()
+</code></pre>
+<h3 id="b-line-charts">b. Line Charts</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Creating a line chart</span>
+plt.figure(figsize=(<span class="hljs-number">8</span>, <span class="hljs-number">6</span>))
+plt.plot(df[<span class="hljs-string">&#x27;Name&#x27;</span>], df[<span class="hljs-string">&#x27;Salary&#x27;</span>], marker=<span class="hljs-string">&#x27;o&#x27;</span>)
+plt.title(<span class="hljs-string">&#x27;Salary Trend&#x27;</span>)
+plt.xlabel(<span class="hljs-string">&#x27;Name&#x27;</span>)
+plt.ylabel(<span class="hljs-string">&#x27;Salary&#x27;</span>)
+plt.grid(<span class="hljs-literal">True</span>)
+plt.show()
+</code></pre>
+<hr>
+<h2 id="5-advanced-operations">5. Advanced Operations</h2>
+<h3 id="a-merging-dataframes">a. Merging DataFrames</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Merging two DataFrames</span>
+data1 = {
+    <span class="hljs-string">&#x27;ID&#x27;</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+    <span class="hljs-string">&#x27;Name&#x27;</span>: [<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-string">&#x27;Charlie&#x27;</span>]
+}
+data2 = {
+    <span class="hljs-string">&#x27;ID&#x27;</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+    <span class="hljs-string">&#x27;Department&#x27;</span>: [<span class="hljs-string">&#x27;HR&#x27;</span>, <span class="hljs-string">&#x27;IT&#x27;</span>, <span class="hljs-string">&#x27;Finance&#x27;</span>]
+}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+merged_df = pd.merge(df1, df2, on=<span class="hljs-string">&#x27;ID&#x27;</span>)
+<span class="hljs-built_in">print</span>(merged_df)
+</code></pre>
+<h3 id="b-pivot-tables">b. Pivot Tables</h3>
+<pre><code class="language-python"><span class="hljs-comment"># Creating a pivot table</span>
+pivot_table = df.pivot_table(values=<span class="hljs-string">&#x27;Salary&#x27;</span>, index=<span class="hljs-string">&#x27;Age&#x27;</span>, columns=<span class="hljs-string">&#x27;Name&#x27;</span>, aggfunc=<span class="hljs-string">&#x27;mean&#x27;</span>)
+<span class="hljs-built_in">print</span>(pivot_table)
+</code></pre>
+<hr>
+<h2 id="6-hands-on-example-in-google-colab">6. Hands-On Example in Google Colab</h2>
+<h3 id="a-google-colab-notebook">a. Google Colab Notebook</h3>
+<p>You can access the Colab notebook with all examples and code snippets here: <a href="https://colab.research.google.com/drive/your-notebook-id">Pandas and Charts Guide</a></p>
+<h3 id="b-python-file">b. Python File</h3>
+<p>Download the Python file with all examples here: <a href="https://your-link-here.com">pandas_charts_guide.py</a></p>
+<h3 id="c-screenshots">c. Screenshots</h3>
+<p>Screenshots of the charts created:</p>
+<p><img src="file:////Users/admin/Documents/Portfolio/Websites/my_portfolio_site/example_pie_chart.png" alt="Pie Chart Example"></p>
+<p><img src="file:////Users/admin/Documents/Portfolio/Websites/my_portfolio_site/example_line_chart.png" alt="Line Chart Example"></p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide serves as a foundational resource for working with Pandas and creating charts. By following the examples and experimenting, you can unlock the full potential of data analysis and visualization in Python.</p>
+<p>For more in-depth exploration, refer to the <a href="https://pandas.pydata.org/docs/">Pandas Documentation</a> and the <a href="https://matplotlib.org/stable/contents.html">Matplotlib Documentation</a>.</p>
+
+            
+            
+        </body>
+        </html>
