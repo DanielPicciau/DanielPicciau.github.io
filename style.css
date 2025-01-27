@@ -103,3 +103,7 @@ header h1 {
     cursor: default !important;
     box-shadow: none !important;
 }
+
+.bg-dark{
+    background-color: black;
+}
