@@ -1,14 +1,19 @@
-# Pandas and Charts: My9 Comprehensive Guide
+# Pandas and Charts: My Comprehensive Guide
 
 ## Table of Contents
 
 1. Introduction to Pandas
+   
 2. Creating and Loading DataFrames
+   
 3. DataFrame Operations
+   
 4. Visualization with Charts
    - Pie Charts
    - Line Charts
+  
 5. Advanced Operations
+   
 6. Hands-On Example in Google Colab
 
 ---
