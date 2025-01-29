@@ -1,0 +1,29 @@
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+.progress {
+    height: 20px;
+}
+.carousel {
+    max-width: 900px;
+    margin: 20px auto;
+}
+.carousel-item {
+    text-align: center;
+    padding: 30px;
+    background: var(--header-bg);
+    border-radius: 10px;
+}
+.carousel-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.carousel-item h3 {
+    color: var(--accent-color);
+}
