@@ -109,3 +109,27 @@
     background-color: #1f1f1fad;
     color: #ffffff;
 }
+
+/* Custom Modal Styling */
+.modal-content {
+    background-color: #111; /* Black Background */
+    color: white; /* White Text */
+    border: 1px solid #333; /* Darker Border */
+}
+
+.modal-header {
+    border-bottom: 1px solid #444; /* Darker separator */
+}
+
+.modal-body {
+    font-size: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #444; /* Darker separator */
+}
+
+/* Custom close button color */
+.btn-close {
+    filter: invert(1); /* Makes the close button white */
+}
