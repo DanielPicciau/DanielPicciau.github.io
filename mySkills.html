@@ -184,6 +184,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </section>
+
+
+
+
+    
+</section>
+<section class="container my-5">
+    <h2 class="text-center">Big Data Overview</h2>
+    <div id="big-data-content"></div>
+</section>
+
+<script>
+    fetch('section_embeds/6.4_section_embed.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('big-data-content').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading Big Data content:', error));
+</script>
+
 </body>
 
 <footer class="bg-dark text-light text-center py-3">
