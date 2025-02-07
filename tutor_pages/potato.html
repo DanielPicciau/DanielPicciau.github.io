@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pseudocode Guide</title>
+  
+
+  <link rel="stylesheet" href="../css_files/pseudocode_style.css" />
+</head>
+<body>
+
+  <h1>Guide to Pseudocode for T-Level Digital Production, Design &amp; Development</h1>
+
+  <p>Pseudocode is a structured method of describing algorithms using simple, language-independent syntax. It is not a programming language, but it follows logical conventions similar to many high-level languages.</p>
+
+  <p>This guide covers:</p>
+  <ul>
+    <li>Data Types</li>
+    <li>Variables and Arrays</li>
+    <li>Selection (IF statements)</li>
+    <li>Loops (Iteration)</li>
+    <li>Functions &amp; Procedures</li>
+    <li>Input &amp; Output</li>
+    <li>File Handling</li>
+    <li>Operators (Arithmetic, Relational, Logical)</li>
+    <li>Comments &amp; Best Practices</li>
+    <li>Advanced Examples</li>
+  </ul>
+
+  <h2>1. Introduction</h2>
+  <p>Pseudocode is a structured way of describing algorithms without committing to the syntax of a specific programming language. Use pseudocode to plan or communicate the steps needed to solve a problem.</p>
+
+  <h2>2. Data Types</h2>
+  <ul>
+    <li><strong>STRING</strong>: “Hello”, “123”</li>
+    <li><strong>CHARACTER</strong>: ‘A’, ‘B’</li>
+    <li><strong>INTEGER</strong>: 5, -100</li>
+    <li><strong>REAL/FLOAT</strong>: 3.14, -2.71</li>
+    <li><strong>BOOLEAN</strong>: TRUE, FALSE</li>
+  </ul>
+
+  <div class="example">
+    <pre><code>SET Name TO 'Daniel'
+SET Age TO 18
+SET Pi TO 3.14159
+SET IsStudent TO TRUE
+    </code></pre>
+    <p><em>Example of declaring variables of different data types.</em></p>
+  </div>
+
+  <h2>3. Variables &amp; Arrays</h2>
+  <h3>3.1 Assigning Variables</h3>
+  <pre><code>SET Score TO 10
+SET Message TO 'Hello'
+  </code></pre>
+  <p>Use <code>SET</code> keyword to assign or reassign a value. Choose descriptive variable names.</p>
+
+  <h3>3.2 Arrays</h3>
+  <pre><code>SET Numbers TO [1, 2, 3, 4, 5]
+SET Names TO ['Alice', 'Bob', 'Charlie']
+  </code></pre>
+  <p>Arrays store multiple values under a single variable name.</p>
+
+  <h3>3.3 Accessing Arrays</h3>
+  <pre><code>SET FirstNumber TO Numbers[0]    # Retrieves the first element (1)
+SET LastName TO Names[2]        # Retrieves 'Charlie'
+  </code></pre>
+  <p>Indexing typically starts at 0, but follow the specified convention.</p>
+
+  <h2>4. Selection (IF Statements)</h2>
+  <h3>4.1 Basic IF Statement</h3>
+  <pre><code>IF Age >= 18 THEN
+    SEND 'You are an adult' TO DISPLAY
+END IF
+  </code></pre>
+
+  <h3>4.2 IF-ELSE Statement</h3>
+  <pre><code>IF Age >= 18 THEN
+    SEND 'You can vote' TO DISPLAY
+ELSE
+    SEND 'You are too young to vote' TO DISPLAY
+END IF
+  </code></pre>
+
+  <h3>4.3 Nested IF Statements (Advanced)</h3>
+  <pre><code>IF Age >= 18 THEN
+    IF Age >= 65 THEN
+        SEND 'You are a senior citizen' TO DISPLAY
+    ELSE
+        SEND 'You are an adult, but not a senior' TO DISPLAY
+    END IF
+ELSE
+    SEND 'You are a minor' TO DISPLAY
+END IF
+  </code></pre>
+
+  <h2>5. Loops (Iteration)</h2>
+  <h3>5.1 WHILE Loop</h3>
+  <pre><code>SET Counter TO 0
+WHILE Counter < 5 DO
+    SEND Counter TO DISPLAY
+    SET Counter TO Counter + 1
+END WHILE
+  </code></pre>
+  <p>Use <code>WHILE</code> loops when the number of iterations depends on a condition.</p>
+
+  <h3>5.2 FOR Loop</h3>
+  <pre><code>FOR Index FROM 1 TO 5 DO
+    SEND Index TO DISPLAY
+END FOR
+  </code></pre>
+  <p>Use <code>FOR</code> loops when the number of iterations is known in advance.</p>
+
+  <h3>5.3 REPEAT-UNTIL Loop</h3>
+  <pre><code>SET Number TO 0
+REPEAT
+    SEND 'Processing...' TO DISPLAY
+    SET Number TO Number + 1
+UNTIL Number = 3
+  </code></pre>
+
+  <h3>5.4 Nested Loops (Advanced)</h3>
+  <pre><code>FOR i FROM 0 TO 2 DO
+    FOR j FROM 0 TO 2 DO
+        SEND "i=" & i & ", j=" & j TO DISPLAY
+    END FOR
+END FOR
+  </code></pre>
+
+  <h2>6. Functions &amp; Procedures</h2>
+  <h3>6.1 Function</h3>
+  <pre><code>FUNCTION Square(Number)
+BEGIN FUNCTION
+    RETURN Number * Number
+END FUNCTION
+  </code></pre>
+  <p>A function returns a value.</p>
+
+  <h3>6.2 Procedure</h3>
+  <pre><code>PROCEDURE Greet(Name)
+BEGIN PROCEDURE
+    SEND 'Hello, ' & Name TO DISPLAY
+END PROCEDURE
+  </code></pre>
+  <p>A procedure performs a task but does not return a value.</p>
+
+  <h3>6.3 Passing Arrays to Functions or Procedures (Advanced)</h3>
+  <pre><code>FUNCTION GetSum(Numbers)
+BEGIN FUNCTION
+    SET Total TO 0
+    FOR i FROM 0 TO LENGTH(Numbers) - 1 DO
+        SET Total TO Total + Numbers[i]
+    END FOR
+    RETURN Total
+END FUNCTION
+
+SET MyNumbers TO [10, 20, 30]
+SET SumOfNumbers TO GetSum(MyNumbers)   # 60
+  </code></pre>
+
+  <h2>7. Input &amp; Output</h2>
+  <h3>7.1 Reading Input</h3>
+  <pre><code>SEND 'Enter your name:' TO DISPLAY
+RECEIVE UserName FROM (STRING) KEYBOARD
+
+SEND 'Enter your age:' TO DISPLAY
+RECEIVE Age FROM (INTEGER) KEYBOARD
+  </code></pre>
+
+  <h3>7.2 Displaying Output</h3>
+  <pre><code>SEND 'Welcome, ' & UserName TO DISPLAY
+  </code></pre>
+
+  <h2>8. File Handling</h2>
+  <h3>8.1 Reading a File</h3>
+  <pre><code>READ MyFile.txt Data
+  </code></pre>
+
+  <h3>8.2 Writing to a File</h3>
+  <pre><code>WRITE MyFile.txt 'Hello World'
+  </code></pre>
+
+  <h3>8.3 Advanced File Handling</h3>
+  <pre><code>OPEN MyFile.txt FOR READ
+WHILE NOT EOF(MyFile.txt) DO
+    READ LINE FromFile
+    SEND FromFile TO DISPLAY
+END WHILE
+CLOSE MyFile.txt
+  </code></pre>
+
+  <pre><code>OPEN MyFile.txt FOR APPEND
+WRITE LINE 'Appending this text.'
+CLOSE MyFile.txt
+  </code></pre>
+
+  <h2>9. Operators</h2>
+
+  <h3>9.1 Arithmetic Operators</h3>
+  <table>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Subtraction</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Multiplication</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>Division</td>
+    </tr>
+    <tr>
+      <td>^</td>
+      <td>Exponent</td>
+    </tr>
+    <tr>
+      <td>MOD</td>
+      <td>Modulo (Remainder)</td>
+    </tr>
+    <tr>
+      <td>DIV</td>
+      <td>Integer Division</td>
+    </tr>
+  </table>
+
+  <pre><code>SET x TO 10
+SET y TO 3
+SET sum TO x + y              # sum = 13
+SET remainder TO x MOD y      # remainder = 1
+SET power TO x ^ y            # power = 1000 (10^3)
+  </code></pre>
+
+  <h3>9.2 Relational Operators</h3>
+  <table>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td>Equal to</td>
+    </tr>
+    <tr>
+      <td>&lt;&gt;</td>
+      <td>Not equal to</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td>&lt;</td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td>&gt;=</td>
+      <td>Greater than or equal to</td>
+    </tr>
+    <tr>
+      <td>&lt;=</td>
+      <td>Less than or equal to</td>
+    </tr>
+  </table>
+
+  <h3>9.3 Logical Operators</h3>
+  <table>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>AND</td>
+      <td>Both conditions must be true</td>
+    </tr>
+    <tr>
+      <td>OR</td>
+      <td>At least one condition must be true</td>
+    </tr>
+    <tr>
+      <td>NOT</td>
+      <td>Reverses the condition</td>
+    </tr>
+  </table>
+
+  <pre><code>IF (Age >= 18) AND (Age < 65) THEN
+    SEND 'Adult but not senior' TO DISPLAY
+END IF
+
+IF (Weather = 'Sunny') OR (Day = 'Sunday') THEN
+    SEND 'Go for a walk' TO DISPLAY
+END IF
+
+IF NOT (Score > 50) THEN
+    SEND 'Score must be 51 or higher' TO DISPLAY
+END IF
+  </code></pre>
+
+  <h2>10. Comments &amp; Best Practices</h2>
+  <ul>
+    <li><strong>Comments</strong>: Explain logic using comments:
+      <pre><code># This is a comment
+COMMENT Another way to comment
+      </code></pre>
+    </li>
+    <li><strong>Meaningful Names</strong>: Choose names that reflect purpose (e.g. <code>TotalPrice</code>, <code>StudentCount</code>).</li>
+    <li><strong>Indentation</strong>: Keep code blocks clear and consistent.</li>
+    <li><strong>Modularity</strong>: Break large problems into functions or procedures.</li>
+    <li><strong>Consistency</strong>: Stick to the same conventions for loops, naming, and style.</li>
+  </ul>
+
+  <h2>11. Example Question &amp; Answer</h2>
+  <p><strong>Question</strong></p>
+  <div class="example">
+    <p>Write a pseudocode program that asks the user for their age and checks if they are eligible to vote (18 or older). If they are eligible, display “You can vote”; otherwise, display “You cannot vote.”</p>
+  </div>
+
+  <p><strong>Answer</strong></p>
+  <pre><code>SEND 'Enter your age:' TO DISPLAY
+RECEIVE Age FROM (INTEGER) KEYBOARD
+
+IF Age >= 18 THEN
+    SEND 'You can vote' TO DISPLAY
+ELSE
+    SEND 'You cannot vote' TO DISPLAY
+END IF
+  </code></pre>
+
+  <h2>12. Advanced Example</h2>
+  <p>Below is a more advanced example that combines multiple concepts (arrays, loops, functions, and IF statements).</p>
+
+  <div class="example">
+    <p><strong>Scenario</strong></p>
+    <ul>
+      <li>Read <em>3</em> test scores from the user into an array.</li>
+      <li>Validate each score is between <code>0</code> and <code>100</code>.</li>
+      <li>Calculate the average score using a function.</li>
+      <li>Display the average and a message indicating if the average is pass or fail (pass if average >= 50).</li>
+    </ul>
+  </div>
+
+  <pre><code>PROCEDURE Main()
+BEGIN PROCEDURE
+
+    SET Scores TO [0, 0, 0]         # Create an array of 3 elements
+    FOR i FROM 0 TO 2 DO
+        SEND 'Enter score ' & (i+1) & ' (0-100):' TO DISPLAY
+        RECEIVE TempScore FROM (INTEGER) KEYBOARD
+
+        # Validate input
+        WHILE TempScore < 0 OR TempScore > 100 DO
+            SEND 'Invalid score. Please enter a value between 0 and 100:' TO DISPLAY
+            RECEIVE TempScore FROM (INTEGER) KEYBOARD
+        END WHILE
+
+        SET Scores[i] TO TempScore
+    END FOR
+
+    # Calculate average using a function
+    SET AverageScore TO CalculateAverage(Scores)
+
+    # Display the average
+    SEND 'Average score is: ' & AverageScore TO DISPLAY
+
+    # Decide pass/fail
+    IF AverageScore >= 50 THEN
+        SEND 'You have passed!' TO DISPLAY
+    ELSE
+        SEND 'You have failed.' TO DISPLAY
+    END IF
+
+END PROCEDURE
+
+FUNCTION CalculateAverage(ScoresArray)
+BEGIN FUNCTION
+    SET Sum TO 0
+    FOR i FROM 0 TO LENGTH(ScoresArray) - 1 DO
+        SET Sum TO Sum + ScoresArray[i]
+    END FOR
+
+    SET Average TO Sum / LENGTH(ScoresArray)
+    RETURN Average
+END FUNCTION
+
+# Start the main procedure
+CALL Main()
+  </code></pre>
+
+  <p><em>This advanced example demonstrates array usage, loops, validation, a function to calculate an average, and an IF statement to determine pass/fail.</em></p>
+
+  <div class="section-border">
+    <h2>Conclusion</h2>
+    <p>Pseudocode allows you to plan and communicate your algorithms in a clear, language-neutral way. By mastering the use of variables, arrays, selection statements, loops, functions, procedures, and operators, you can break down and solve complex problems systematically. Always remember to comment effectively, use meaningful names, and keep your pseudocode consistent and readable.</p>
+    <p><strong>Good luck with your T-Level Digital Production, Design &amp; Development studies!</strong></p>
+  </div>
+
+</body>
+</html>
