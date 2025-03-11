@@ -146,3 +146,143 @@ BEGIN
 END
 
 ```
+
+## Function
+Declare a function
+```python
+def add(num1, num2):
+    answer = num1 + num2
+    return answer
+```
+
+```text
+FUNCTION add (num1, num2)
+
+    BEGIN FUNCTION
+        SET answer TO num1 + num2
+        RETURN answer
+    END FUNCTION
+```
+
+Call the function
+
+```python
+add(2,4)
+```
+
+```text
+add (2,4)
+```
+
+```text
+FUNCTION bubble_sort(arr)
+    BEGIN FUNCTION
+        SET n TO LENGTH(arr)
+
+        FOR i FROM 0 TO n - 2 DO
+            FOR j FROM 0 TO n - i - 2 DO
+                IF arr[j] > arr[j + 1] THEN
+                    SET temp TO arr[j]
+                    SET arr[j] TO arr[j + 1]
+                    SET arr[j + 1] TO temp
+                END IF
+            END FOR
+        END FOR
+    END FUNCTION
+
+BEGIN
+    SET arr TO [64, 34, 25, 12, 22, 11, 90]
+    CALL bubble_sort(arr)
+    SEND "Sorted array: ", arr TO DISPLAY
+END
+```
+
+```text
+FUNCTION linear_search(arr, target)
+    BEGIN FUNCTION
+        FOR i FROM 0 TO LENGTH(arr) - 1 DO
+            IF arr[i] = target THEN
+                RETURN i  // Return the index if found
+            END IF
+        END FOR
+        RETURN -1  // Return -1 if not found
+    END FUNCTION
+
+
+BEGIN
+    SET arr TO [10, 20, 30, 40, 50]
+    SET target TO 30
+    SET result TO CALL linear_search(arr, target)
+
+    IF result != -1 THEN
+        SEND "Element found at index ", result TO DISPLAY
+    ELSE
+        SEND "Element not found" TO DISPLAY
+    END IF
+END
+
+```
+
+```ps
+BEGIN
+
+    SEND "Enter the number of books bought: " TO DISPLAY
+    RECEIVE books FROM (INTEGER) KEYBOARD
+
+    WHILE books <= 0 DO
+        SEND "Error: Number of books must be positive." TO DISPLAY
+        SEND "Enter the number of books bought: " TO DISPLAY
+        RECEIVE books FROM (INTEGER) KEYBOARD
+    END WHILE
+
+    SEND "Enter the total value of the order (in £): " TO DISPLAY
+    RECEIVE orderValue FROM (REAL) KEYBOARD
+
+    WHILE orderValue <= 0 DO
+        SEND "Error: Order value must be positive." TO DISPLAY
+        SEND "Enter the total value of the order (in £): " TO DISPLAY
+        RECEIVE orderValue FROM (REAL) KEYBOARD
+    END WHILE
+
+    IF books >= 10 THEN
+        SET voucher TO 15
+    ELSE IF (books >= 5) AND (orderValue > 50) THEN
+        SET voucher TO 5
+    ELSE
+        SET voucher TO 1
+    END IF
+
+    SEND "Your gift voucher is worth £" + voucher TO DISPLAY
+
+END
+
+```
+
+```ps
+BEGIN
+    SEND "Enter the number of pages printed: " TO DISPLAY
+    RECEIVE pages FROM (INTEGER) KEYBOARD
+
+    WHILE pages <= 0 DO
+        SEND "Error: Number of pages must be positive." TO DISPLAY
+        SEND "Enter the number of pages printed: " TO DISPLAY
+        RECEIVE pages FROM (INTEGER) KEYBOARD
+    END WHILE
+
+    SEND "Are the pages in colour? (YES/NO): " TO DISPLAY
+    RECEIVE isColour FROM (STRING) KEYBOARD
+
+    IF isColour = "YES" THEN
+        SET cost TO pages * 7
+    ELSE
+        SET cost TO pages * 2
+    END IF
+
+    IF cost > 50 THEN
+        SET cost TO 50
+    END IF
+
+    SEND "Total printing cost: ", cost, "p" TO DISPLAY
+END
+
+```

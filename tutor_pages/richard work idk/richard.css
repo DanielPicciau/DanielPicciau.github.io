@@ -1,0 +1,44 @@
+body{
+    background-color: #101010;
+}
+
+
+.card{
+    width: 200px;
+    height: 300px;
+    position: relative;
+    background-color: #202020;
+    border: 1px solid #101010;
+    border-radius: 15px;
+    display: inline-block;
+ 
+}
+
+.card img{
+    width: 100%;
+    height: 50%;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+h1{
+    margin-top: 0;
+    text-align: center;
+    color: aliceblue;
+    font-size: 10px;
+   
+}
+
+.cardText{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #303030;
+    font-size:10px;
+    color: white;
+    padding:5px;
+    position: absolute;
+    bottom:0;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
